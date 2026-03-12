@@ -1,8 +1,8 @@
 const fs = require("fs");
 
-// Delivery Driver Shift Tracker - manages shift logs, quotas, and pay calculations
+//Delivery Driver Shift Tracker - manages shift logs, quotas, and pay calculations
 
-// Helper: convert "hh:mm:ss am/pm" to total seconds
+//Helper: convert "hh:mm:ss am/pm" to total seconds
 function timeToSeconds(timeStr) {
     timeStr = timeStr.trim();
     const parts = timeStr.split(' ');
@@ -21,14 +21,14 @@ function timeToSeconds(timeStr) {
     return hours * 3600 + minutes * 60 + seconds;
 }
 
-// Helper: convert "h:mm:ss" or "hhh:mm:ss" duration string to total seconds
+//Helper: convert "h:mm:ss" or "hhh:mm:ss" duration string to total seconds
 function durationToSeconds(durationStr) {
     durationStr = durationStr.trim();
     const parts = durationStr.split(':');
     return parseInt(parts[0]) * 3600 + parseInt(parts[1]) * 60 + parseInt(parts[2]);
 }
 
-// Helper: convert total seconds to "h:mm:ss"
+//Helper: convert total seconds to "h:mm:ss"
 function secondsToDuration(totalSeconds) {
     const h = Math.floor(totalSeconds / 3600);
     const m = Math.floor((totalSeconds % 3600) / 60);
